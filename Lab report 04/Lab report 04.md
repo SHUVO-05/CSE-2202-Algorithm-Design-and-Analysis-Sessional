@@ -55,3 +55,7 @@ int main() {
     coinChangeGreedy(amount, coins);
     return 0;
 }
+```
+### Sample Output
+
+![Linear Search Output](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Lab%20report%2004/Coin%20Change%20Using%20Greedy%20Algorithm.png)
