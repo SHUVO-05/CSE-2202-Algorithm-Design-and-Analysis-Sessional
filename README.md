@@ -779,4 +779,82 @@ Greedy Strategy:
 ---
 
 ### Practical Work
+## b. Source Code (C++)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Item {
+    float weight, value;
+};
+
+bool compare(Item a, Item b) {
+    return (a.value / a.weight) > (b.value / b.weight);
+}
+
+float fractionalKnapsack(vector<Item>& items, float capacity) {
+    sort(items.begin(), items.end(), compare);
+    
+    float totalValue = 0.0;
+
+    for (auto& item : items) {
+        if (capacity >= item.weight) {
+            totalValue += item.value;
+            capacity -= item.weight;
+        } else {
+            totalValue += item.value * (capacity / item.weight);
+            break;
+        }
+    }
+
+    return totalValue;
+}
+
+int main() {
+    int n;
+    float capacity;
+    cout << "Enter number of items: ";
+    cin >> n;
+    cout << "Enter knapsack capacity: ";
+    cin >> capacity;
+
+    vector<Item> items(n);
+    for (int i = 0; i < n; i++) {
+        cout << "Enter value and weight of item " << i + 1 << ": ";
+        cin >> items[i].value >> items[i].weight;
+    }
+
+    float maxValue = fractionalKnapsack(items, capacity);
+    cout << "Maximum value in Knapsack = " << maxValue << endl;
+    return 0;
+}
+```
+
+### Fibonacci using Memoization (Top-Down DP)
+
+- Store intermediate results to avoid recalculations.
+
+### Fibonacci using Tabulation (Bottom-Up DP)
+
+- Compute from base cases up to F(n), using iteration.
+
+---
+
+## Theoretical Solution
+
+| Approach      | Time Complexity | Space Complexity            |
+|---------------|-----------------|----------------------------|
+| Recursive     | O(2^n)          | O(n) (due to call stack)   |
+| Memoization   | O(n)            | O(n) (array + recursion stack) |
+| Tabulation    | O(n)            | O(n) (or O(1) with optimization) |
+
+---
+
+## Practical Work
+
+*(Add your practical work details here)*
+
 
