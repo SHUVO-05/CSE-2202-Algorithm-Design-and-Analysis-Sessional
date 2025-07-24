@@ -493,16 +493,6 @@ void mergeSort(int arr[], int l, int r) {
 - Iterative merge sort is more **stack-safe** for large datasets.
 
 
-
-## Challenges
-
-- Writing the iterative merge sort correctly was more complex than the recursive one.
-- Managing indices and bounds carefully during merge steps.
-- Measuring precise execution time for empirical comparison.
-- Handling array boundaries to avoid index out-of-bounds errors.
-
-
-
 ## Conclusion
 
 In this lab, we explored **Divide and Conquer** algorithms, particularly **Merge Sort**. We successfully implemented both recursive and iterative variants, verified their theoretical complexities, and compared them through practical execution.
