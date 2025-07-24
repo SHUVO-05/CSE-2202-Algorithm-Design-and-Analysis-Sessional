@@ -118,3 +118,43 @@ int main() {
     return 0;
 }
 ```
+# Experiment 2: Binary Search (Sorted Array Required)
+
+## Objective
+To implement binary search and understand its logarithmic time complexity.
+
+---
+
+## Algorithm
+Use the divide and conquer approach to repeatedly halve the array until the key is found or the search space is exhausted.
+
+---
+
+## Theoretical Solution
+
+- **Best Case:** O(1) — when the key is found at the midpoint in the first iteration.
+- **Worst Case:** O(log n)
+- **Average Case:** O(log n)
+- **Space Complexity:** O(1)
+
+---
+
+## Practical Work
+
+### a. Pseudocode
+
+```plaintext
+BinarySearch(array, key)
+  low = 0
+  high = n - 1
+  while low <= high
+    mid = (low + high) / 2
+    if array[mid] == key
+      return mid
+    else if key < array[mid]
+      high = mid - 1
+    else
+      low = mid + 1
+  return -1
+```
+
