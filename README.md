@@ -192,6 +192,9 @@ int main() {
     return 0;
 }
 ```
+### Sample Output
+
+![Binary Search](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Binary%20Search.png)
 # Experiment 3: Bubble Sort – Complexity Analysis
 
 ## Objective
@@ -263,10 +266,13 @@ int main() {
 
     cout << "Sorted array: ";
     printArray(arr, n);
-
     return 0;
 }
 ```
+### Sample Output
+
+![Bubble Sort](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Bubble%20sort.png)
+
 # Lab 02: Algorithm Analysis and Sorting Techniques
 
 ## Analysis Table
@@ -463,6 +469,9 @@ void mergeSort(int arr[], int l, int r) {
     }
 }
 ```
+### Sample Output
+
+![Merge Sort](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Iterative%20%26%20Recursive%20%20%20Merge%20%20sort.png)
 
 ## Analysis Table
 
@@ -612,6 +621,10 @@ void printArray(int arr[], int size) {
     cout << endl;
 }
 ```
+### Sample Output
+
+![Quick Sort](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Iterative%20%26%20Recursive%20Quick%20sort.png)
+
 ## Analysis Table
 
 | Algorithm           | Best Case   | Worst Case | Avg Case   | Space   |
@@ -627,14 +640,6 @@ void printArray(int arr[], int size) {
 - Iterative quick sort avoids function call overhead but requires manual stack handling.
 - For large arrays, both versions are significantly faster than Bubble or Insertion Sort.
 - Recursive version may hit stack overflow for very large datasets without tail call optimization.
-
-
-
-## Challenges
-
-- Stack management in the iterative approach was tricky.
-- Ensuring correct pivot and partition logic during both versions.
-- Measuring and comparing execution times manually required precision.
 
 
 
@@ -702,6 +707,11 @@ int main() {
     return 0;
 }
 ```
+
+### Sample Output
+
+![Greedy Coinchange](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Coin%20Change%20Problem.png)
+
 ## Analysis Table
 
 | Amount | Coins Used (Greedy)           | Minimum Coins (Optimal) | Greedy Correct? |
@@ -724,9 +734,6 @@ int main() {
 - It works optimally with classic coin denominations like US coins.
 - For some unusual coin sets, greedy fails and other algorithms (like dynamic programming) are needed.
 
-### Challenges
-- If the coin denominations are unordered, sorting is required first.
-- Some coin sets cannot be solved optimally with greedy; other methods are necessary.
 
 ### Conclusion
 This lab helped understand the Greedy Algorithm paradigm and its application to the Coin Change problem. Greedy uses less time and memory but does not always guarantee optimality. Therefore, the choice of algorithm depends on the problem type.
@@ -823,6 +830,9 @@ int main() {
     return 0;
 }
 ```
+### Sample Output
+
+![Greedy Algorithm](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/G_A_Fac_Knapsack.png)
 
 # Analysis Table
 
@@ -848,14 +858,6 @@ int main() {
 - Greedy fails to produce optimal results when only whole items are allowed (0/1 Knapsack).
 - Sorting by value-to-weight ratio is crucial for accuracy.
 - For large input sizes, Greedy gives fast and close-to-optimal solutions.
-
----
-
-# Challenges
-
-- Understanding where greedy fails compared to dynamic programming.
-- Implementing proper sorting based on value/weight ratio.
-- Handling floating-point fractions precisely.
 
 ---
 
@@ -1005,6 +1007,12 @@ int main() {
 
 }
 ```
+### Sample Output
+
+![Fibonacci ](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Fibonacci%20%20Recursive%20%26%20DP.png)
+
+
+
 # Lab 08  
 ## Experiment 09: Implementation of 0/1 Knapsack Problem Using Dynamic Programming
 
@@ -1119,6 +1127,10 @@ int main() {
     return 0;
 }
 ```
+
+### Sample Output
+
+![_0/1_kansack](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/_0_1%20%20Kanpsack.png)
 ## b. Sample Input/Output
 
 ### Input:
