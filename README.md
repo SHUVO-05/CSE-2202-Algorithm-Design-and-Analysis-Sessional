@@ -1126,4 +1126,47 @@ int main() {
     return 0;
 }
 ```
+## b. Sample Input/Output
+
+### Input:
+- Weights: [10, 20, 30]  
+- Values: [60, 100, 120]  
+- Knapsack Capacity: 50
+
+### Output:
+- Maximum value in knapsack = 220
+
+---
+
+## Analysis Table
+
+| Algorithm           | Best Case | Worst Case | Average Case | Space Complexity |
+|---------------------|-----------|------------|---------------|------------------|
+| 0/1 Knapsack (DP)   | O(n × W)  | O(n × W)   | O(n × W)      | O(n × W)         |
+
+> Where `n` = number of items, `W` = knapsack capacity
+
+---
+
+## Observations
+
+- The Dynamic Programming (DP) approach correctly calculates the maximum value for the 0/1 knapsack problem.
+- It follows a bottom-up approach using memoization to avoid redundant calculations.
+- This method is significantly more efficient than the brute-force approach, which has exponential time complexity.
+
+---
+
+## Conclusion
+
+- Successfully implemented the 0/1 Knapsack Problem using Dynamic Programming.
+- Applied a tabulation-based approach to ensure optimal results in polynomial time.
+- Demonstrated a classic use-case of DP in solving combinatorial optimization problems.
+- This lab also highlighted real-life applications of DP in:
+  - Resource allocation  
+  - Budget planning  
+  - Logistics
+
+---
+
+End of section
 
