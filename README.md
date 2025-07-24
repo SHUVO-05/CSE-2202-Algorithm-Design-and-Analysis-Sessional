@@ -833,28 +833,64 @@ int main() {
 }
 ```
 
-### Fibonacci using Memoization (Top-Down DP)
+# Analysis Table
 
-- Store intermediate results to avoid recalculations.
-
-### Fibonacci using Tabulation (Bottom-Up DP)
-
-- Compute from base cases up to F(n), using iteration.
+| Algorithm          | Best Case   | Worst Case  | Avg Case    | Space    |
+|--------------------|-------------|-------------|-------------|----------|
+| Fractional Knapsack | O(n log n)  | O(n log n)  | O(n log n)  | O(n)     |
 
 ---
 
-## Theoretical Solution
+# Comparison Table (Empirical)
 
-| Approach      | Time Complexity | Space Complexity            |
-|---------------|-----------------|----------------------------|
-| Recursive     | O(2^n)          | O(n) (due to call stack)   |
-| Memoization   | O(n)            | O(n) (array + recursion stack) |
-| Tabulation    | O(n)            | O(n) (or O(1) with optimization) |
+| Items (Value, Weight)                  | Capacity | Greedy Value | Optimal Value (0/1) | Greedy Correct? |
+|--------------------------------------|----------|--------------|---------------------|-----------------|
+| (60, 10), (100, 20), (120, 30)       | 50       | 240          | 240                 | ✅              |
+| (30, 10), (20, 20), (100, 30)        | 50       | 160          | 160                 | ✅              |
+| (60, 10), (100, 20), (120, 30)       | 40       | 200          | 220 (0/1)           | ❌              |
 
 ---
 
-## Practical Work
+# Observations
 
-*(Add your practical work details here)*
+- Greedy algorithm performs well when fractional items are allowed.
+- Greedy fails to produce optimal results when only whole items are allowed (0/1 Knapsack).
+- Sorting by value-to-weight ratio is crucial for accuracy.
+- For large input sizes, Greedy gives fast and close-to-optimal solutions.
 
+---
+
+# Challenges
+
+- Understanding where greedy fails compared to dynamic programming.
+- Implementing proper sorting based on value/weight ratio.
+- Handling floating-point fractions precisely.
+
+---
+
+# Conclusion
+
+- Greedy strategy is effective for Fractional Knapsack, providing near-optimal results efficiently.
+- However, it cannot be used for 0/1 Knapsack, where dynamic programming is more suitable.
+- It is important to choose the right algorithm depending on the nature of the problem.
+
+---
+
+# Lab 06  
+**Experiment 08:** Implementation of Fibonacci Series using Recursion and Dynamic Programming
+
+---
+
+## Objective
+
+- To implement Fibonacci Series using recursion, memoization, and tabulation.
+- To understand and apply Dynamic Programming principles.
+- To compare time and space complexity across different implementations.
+- To visualize overlapping sub-problems and optimal substructure.
+
+---
+
+## Algorithm
+
+### Fibonacci Recursive Algorithm
 
