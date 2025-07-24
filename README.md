@@ -893,4 +893,14 @@ int main() {
 ## Algorithm
 
 ### Fibonacci Recursive Algorithm
+```plaintext
 
+
+F(n) = F(n-1) + F(n-2)
+
+Base cases:
+
+F(0) = 0
+
+F(1) = 1
+```
