@@ -158,7 +158,9 @@ BinarySearch(array, key)
   return -1
 ```
 
-b. Source Code (C++):
+### b. Source Code (C++)
+
+```cpp
 #include <iostream>
 using namespace std;
 
