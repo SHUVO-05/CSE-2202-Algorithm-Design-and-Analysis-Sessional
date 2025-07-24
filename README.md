@@ -118,6 +118,9 @@ int main() {
     return 0;
 }
 ```
+### Sample Output
+
+![Linear Search Output](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Linear%20%20search.png)
 # Experiment 2: Binary Search (Sorted Array Required)
 
 ## Objective
