@@ -273,6 +273,37 @@ int main() {
 
 ![Bubble Sort](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Bubble%20sort.png)
 
+## Analysis Table
+
+| Algorithm      | Best Case | Worst Case | Avg Case | Space |
+|----------------|-----------|------------|----------|--------|
+| Linear Search  | O(1)      | O(n)       | O(n)     | O(1)   |
+| Binary Search  | O(1)      | O(log n)   | O(log n) | O(1)   |
+| Bubble Sort    | O(n)      | O(n²)      | O(n²)    | O(1)   |
+
+---
+
+## Observations
+
+- **Binary Search** is much faster than Linear Search for large datasets but works only on **sorted arrays**.
+- **Linear Search** is more **flexible** and works on **unsorted data**, but is **inefficient** for large `n`.
+- **Bubble Sort** is **easy to implement** but **very inefficient** for large inputs.
+- Step count observations **match theoretical Big-O analysis**.
+
+---
+
+## Conclusion
+
+This lab provided a practical understanding of basic algorithm complexities using real implementations.
+
+We observed how:
+- Step count increases **linearly or logarithmically** depending on the algorithm.
+- **Optimizations** can significantly reduce time.
+- Theoretical knowledge of **asymptotic notations** matches practical observations.
+
+We are now more confident in analyzing and comparing basic algorithms.
+
+
 # Lab 02: Algorithm Analysis and Sorting Techniques
 
 ## Analysis Table
@@ -1011,6 +1042,34 @@ int main() {
 
 ![Fibonacci ](https://github.com/SHUVO-05/CSE-2202-Algorithm-Design-and-Analysis-Sessional/blob/main/Fibonacci%20%20Recursive%20%26%20DP.png)
 
+## Analysis Table
+
+| Algorithm    | Best Case         | Worst Case       | Avg Case         | Space                  |
+|--------------|------------------|------------------|------------------|------------------------|
+| Recursive    | O(1) *(n = 0 or 1)* | O(2ⁿ)             | O(2ⁿ)             | O(n) *(stack)*          |
+| Memoization  | O(n)             | O(n)             | O(n)             | O(n)                   |
+| Tabulation   | O(n)             | O(n)             | O(n)             | O(n) → **O(1)** * |
+
+> **\*** Space for Tabulation can be optimized to **O(1)** by using just two variables instead of an array.
+
+---
+
+## Observations
+
+- Recursive approach is **simple** but extremely **inefficient** for larger `n` due to **recomputation**.
+- Memoization significantly improves performance by **caching results**.
+- Tabulation is **most efficient** and easier to **optimize for space**.
+
+---
+
+## Complexity Graph Explanation
+
+| Input Size (n) | Recursive Time (Approx) | DP Time (Approx) |
+|----------------|-------------------------|------------------|
+| 5              | 15                      | 5                |
+| 10             | 177                     | 10               |
+| 20             | ~20,000                 | 20               |
+| 30             | ~2 million              | 30               |
 
 
 # Lab 08  
