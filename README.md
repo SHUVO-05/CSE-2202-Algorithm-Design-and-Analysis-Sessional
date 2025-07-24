@@ -567,4 +567,115 @@ ITERATIVE_QUICKSORT(arr, low, high)
     if pivotIndex + 1 < high
       push(pivotIndex + 1, high)
 ```
+### b. Source Code in C++
+
+```cpp
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+// Recursive Quick Sort
+void quickSortRecursive(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSortRecursive(arr, low, pi - 1);
+        quickSortRecursive(arr, pi + 1, high);
+    }
+}
+
+// Iterative Quick Sort
+void quickSortIterative(int arr[], int low, int high) {
+    stack<pair<int, int>> s;
+    s.push({low, high});
+    while (!s.empty()) {
+        low = s.top().first;
+        high = s.top().second;
+        s.pop();
+
+        int pi = partition(arr, low, high);
+        if (pi - 1 > low)
+            s.push({low, pi - 1});
+        if (pi + 1 < high)
+            s.push({pi + 1, high});
+    }
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+```
+## Analysis Table
+
+| Algorithm           | Best Case   | Worst Case | Avg Case   | Space   |
+|---------------------|-------------|------------|------------|---------|
+| Quick Sort Recursive | O(n log n)  | O(n²)      | O(n log n) | O(log n)|
+| Quick Sort Iterative | O(n log n)  | O(n²)      | O(n log n) | O(n)    |
+
+---
+
+## Observations
+
+- Recursive approach is simpler and easier to implement.
+- Iterative quick sort avoids function call overhead but requires manual stack handling.
+- For large arrays, both versions are significantly faster than Bubble or Insertion Sort.
+- Recursive version may hit stack overflow for very large datasets without tail call optimization.
+
+---
+
+## Challenges
+
+- Stack management in the iterative approach was tricky.
+- Ensuring correct pivot and partition logic during both versions.
+- Measuring and comparing execution times manually required precision.
+
+---
+
+## Conclusion
+
+Quick Sort is an efficient sorting algorithm that benefits from the divide and conquer technique. While both recursive and iterative implementations perform similarly in time complexity, the recursive version is more readable. However, for applications where stack depth is a concern, the iterative version offers better control over memory usage.
+
+---
+
+# Lab 04  
+## Greedy Algorithms – Coin Change Problem
+
+### Experiment 06: Greedy Algorithms – Coin Change Problem
+
+#### Objective
+- Understand the concept of the Greedy Algorithm.
+- Implement the Coin Change problem using the greedy approach.
+- Compare the greedy solution with the optimal solution.
+- Analyze the time and space complexity of the algorithm.
+
+#### Algorithm
+
+Greedy Coin Change Algorithm:  
+At each step, select the largest coin denomination that is less than or equal to the remaining amount. Subtract that coin's value from the remaining amount and repeat until the amount reaches zero.
+
+#### Theoretical Solution of the Given Problem
+
+- **Input:** a set of coin denominations and a target amount.  
+- **Output:** minimum number of coins required to make the target amount.  
+- Greedy approach is fast but may **not always give the optimal solution**.  
+- For denominations like `[1, 5, 10, 25]`, greedy **always gives the optimal solution**.  
+- For denominations like `[1, 3, 4]`, greedy **may fail** to give the optimal solution.
+
+---
+
+## Practical Work
 
