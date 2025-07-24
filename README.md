@@ -264,3 +264,131 @@ int main() {
     return 0;
 }
 ```
+# Lab 02: Algorithm Analysis and Sorting Techniques
+
+## Analysis Table
+
+| **Algorithm**    | **Best Case** | **Worst Case** | **Average Case** | **Space** |
+|------------------|---------------|----------------|------------------|-----------|
+| Linear Search     | O(1)          | O(n)           | O(n)             | O(1)      |
+| Binary Search     | O(1)          | O(log n)       | O(log n)         | O(1)      |
+| Bubble Sort       | O(n)          | O(n²)          | O(n²)            | O(1)      |
+
+---
+
+## Observations
+
+- **Binary Search** is much faster than **Linear Search** for large datasets but requires a **sorted array**.
+- **Linear Search** is more flexible (works on unsorted arrays), but inefficient for large `n`.
+- **Bubble Sort** is simple and easy to implement but highly inefficient for large inputs.
+- Step count observations align with theoretical **Big-O** analysis.
+
+---
+
+## Conclusion
+
+This lab provided a practical understanding of **basic algorithm complexities** through real code implementations.
+
+### Key Takeaways:
+- Step count increases **linearly** or **logarithmically** depending on the algorithm.
+- Optimizations (e.g., early exits in sorting/searching) can significantly improve runtime.
+- Theoretical understanding of **asymptotic notations** is reflected in actual step behavior.
+- Improved confidence in analyzing and comparing algorithm performance.
+
+---
+
+## Lab Overview: Lab 02
+
+### Learning Objectives
+
+By the end of this lab session, students will be able to:
+
+- Understand the **Divide and Conquer** paradigm.
+- Implement and compare both **recursive and iterative** versions of **Merge Sort**.
+- Analyze and compare **time and space complexity**.
+- Apply **recursive thinking** to problem-solving.
+- Relate **theoretical complexity** with **practical execution**.
+
+---
+
+## Lesson Fit
+
+### Prerequisites:
+
+- Programming in **C/C++**
+- Understanding of **data structures** (arrays, recursion)
+
+---
+
+## Theory Recap: What is Divide and Conquer?
+
+**Divide and Conquer** is a powerful algorithm design technique where:
+
+1. **Divide**: Break the problem into smaller subproblems.
+   - _e.g.,_ split an array into halves in Merge Sort.
+2. **Conquer**: Solve each subproblem recursively.
+   - Base cases are handled directly.
+3. **Combine**: Merge solutions to subproblems into the final result.
+
+### Why Use Divide and Conquer?
+
+- Efficient for **large input sizes**
+- Reduces time complexity (e.g., from O(n²) → O(n log n))
+- Encourages **recursive problem-solving**
+- Enables **parallelism** for performance optimization
+
+---
+
+## Classic Examples of Divide and Conquer
+
+| **Algorithm**           | **Problem Type**          | **Time Complexity**     |
+|-------------------------|---------------------------|--------------------------|
+| Merge Sort              | Sorting                   | O(n log n)               |
+| Quick Sort              | Sorting                   | O(n log n) (average)     |
+| Binary Search           | Searching                 | O(log n)                 |
+| Closest Pair of Points  | Computational Geometry    | O(n log n)               |
+| Strassen's Multiplication | Matrix Multiplication   | ~O(n^2.81)               |
+| Karatsuba’s Algorithm   | Integer Multiplication    | O(n^1.58)                |
+
+---
+
+# Experiment 04: Merge Sort – Recursive and Iterative
+
+## Objective
+
+- To implement **Merge Sort** using both **recursive** and **iterative** techniques.
+- To understand and compare their **time and space complexities**.
+- To observe **step behavior** on various input sizes.
+
+---
+
+## Algorithm
+
+**Merge Sort** is a **stable sorting algorithm** based on the **Divide and Conquer** strategy.
+
+- **Divide**: Split the array into two halves.
+- **Conquer**: Recursively or iteratively sort both halves.
+- **Combine**: Merge the two sorted halves into a single sorted array.
+
+---
+
+## Theoretical Solution
+
+### Time Complexity
+
+| **Case**     | **Recursive** | **Iterative** |
+|--------------|---------------|---------------|
+| Best Case    | O(n log n)    | O(n log n)    |
+| Worst Case   | O(n log n)    | O(n log n)    |
+| Average Case | O(n log n)    | O(n log n)    |
+
+### Space Complexity
+
+- **Recursive Merge Sort**: O(n)  
+  _(Due to recursion stack + temporary arrays)_
+- **Iterative Merge Sort**: O(n)  
+  _(Avoids recursion but still uses temp arrays)_
+
+---
+
+Let me know if you’d like to include the **C++ implementations** for recursive and iterative Merge Sort in the next section!
