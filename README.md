@@ -75,4 +75,46 @@ Check each element of the array from start to end to find the target.
 
 #### a. Pseudocode
 
+# Linear Search
 
+---
+
+## a. Pseudocode
+
+```text
+LinearSearch(array, key)
+  for i = 0 to length(array) - 1
+    if array[i] == key
+      return i
+  return -1
+
+```
+
+## b. Source Code (C++)
+
+```cpp
+// Linear Search
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int key) {
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == key)
+            return i;
+    }
+    return -1;
+}
+
+int main() {
+    int arr[] = {5, 10, 15, 20, 25};
+    int key = 20;
+    int result = linearSearch(arr, 5, key);
+
+    if(result != -1)
+        cout << "Element found at index: " << result << endl;
+    else
+        cout << "Element not found" << endl;
+
+    return 0;
+}
+```
