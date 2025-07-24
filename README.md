@@ -1014,4 +1014,64 @@ int main() {
 
 }
 ```
+# Lab 08  
+## Experiment 09: Implementation of 0/1 Knapsack Problem Using Dynamic Programming
 
+---
+
+## Objective
+
+- Understand the classical 0/1 Knapsack Problem.
+- Learn to apply **Dynamic Programming (DP)** to solve optimization problems.
+- Implement the 0/1 Knapsack algorithm using the **Bottom-Up DP** approach.
+- Analyze the **time and space complexity** of the implemented solution.
+- Observe and evaluate performance compared to **greedy or brute-force** methods.
+
+---
+
+## Theoretical Background
+
+The **0/1 Knapsack Problem** is defined as:
+
+> Given `n` items, each with a weight `w[i]` and a value `v[i]`, and a knapsack with total capacity `W`, determine the **maximum total value** that can be accommodated without exceeding the capacity, where each item can either be taken (1) or left (0).
+
+- Items **cannot be divided**, unlike in the Fractional Knapsack Problem.
+- **Greedy algorithms** do **not** yield optimal results for this problem.
+- **Dynamic Programming** is used to avoid recomputation of overlapping subproblems by storing intermediate results.
+
+---
+
+## Analysis Table
+
+| Algorithm    | Best Case             | Worst Case | Average Case | Space               |
+|--------------|------------------------|-------------|---------------|----------------------|
+| Recursive    | O(1) *(n = 0 or 1)*   | O(2ⁿ)      | O(2ⁿ)        | O(n) *(stack space)* |
+| Memoization  | O(n)                 | O(n)       | O(n)         | O(n)                 |
+| Tabulation   | O(n)                 | O(n)       | O(n)         | O(n) → **O(1)**\*    |
+
+\* Space for **Tabulation** can be optimized to **O(1)** by using just two variables instead of an entire array.
+
+---
+
+## Observations
+
+- The **recursive** approach is simple but becomes extremely inefficient for larger `n` due to redundant computations.
+- **Memoization** significantly improves performance by caching results and avoiding recomputation (Top-Down DP).
+- **Tabulation** (Bottom-Up DP) is the most efficient method and is easier to optimize for space.
+
+---
+
+## Complexity Graph Explanation
+
+| Input Size (n) | Recursive Time (Approx) | DP Time (Approx) |
+|----------------|--------------------------|-------------------|
+| 5              | 15                       | 5                 |
+| 10             | 177                      | 10                |
+| 20             | ~20,000                  | 20                |
+| 30             | ~2 million               | 30                |
+
+---
+
+## Algorithm (Bottom-Up Dynamic Programming)
+
+We construct a `dp[n+1][W+1]` table where `dp[i][w]` holds the **maximum value** using the first `i` items and a knapsack capacity of `w`.
