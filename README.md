@@ -1095,7 +1095,7 @@ Function knapsack(values[], weights[], n, W):
 Practical Work
 
 a. Source Code (C++)
-```plaintext
+```cpp
 #include <iostream>
 using namespace std;
 
