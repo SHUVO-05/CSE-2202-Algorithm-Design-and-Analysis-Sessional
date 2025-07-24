@@ -189,3 +189,38 @@ int main() {
     return 0;
 }
 ```
+# Experiment 3: Bubble Sort – Complexity Analysis
+
+## Objective
+To implement bubble sort and understand quadratic time complexity.
+
+---
+
+## Algorithm
+Repeatedly swap adjacent elements if they are in the wrong order until the array is sorted.
+
+---
+
+## Theoretical Solution
+
+- **Best Case:** O(n) – when the array is already sorted (optimized version)
+- **Worst Case:** O(n²)
+- **Average Case:** O(n²)
+- **Space Complexity:** O(1)
+
+---
+
+## Practical Work
+
+### a. Pseudocode
+
+```plaintext
+BubbleSort(array)
+  repeat
+    swapped = false
+    for i = 0 to n - 2
+      if array[i] > array[i + 1]
+        swap array[i], array[i + 1]
+        swapped = true
+  until swapped == false
+  ```
