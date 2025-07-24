@@ -10,14 +10,14 @@ By the end of this lab, students will be able to:
 - Apply asymptotic notations: Big-O, Big-Ω, Big-Θ to actual code.
 - Perform manual complexity analysis on basic algorithms.
 
----
+
 
 ## Prerequisites
 
 - Programming knowledge in C/C++
 - Understanding of Data Structures (arrays, loops, etc.)
 
----
+
 
 ## Theory Recap
 
@@ -35,7 +35,7 @@ An algorithm is a finite, step-by-step procedure designed to solve a specific pr
 | Finiteness     | Must terminate after a finite number of steps |
 | Effectiveness  | Steps are basic and executable              |
 
----
+
 
 ### Asymptotic Notations
 
@@ -45,9 +45,9 @@ An algorithm is a finite, step-by-step procedure designed to solve a specific pr
 | Ω(f(n))    | Lower Bound  | Best-case: T(n) ≥ c·f(n) for large n            |
 | Θ(f(n))    | Tight Bound  | Average-case: T(n) = c·f(n) for large n         |
 
----
 
-*End of Theory Section.*
+
+
 # Lab Activities
 
 ## Experiment 1: Linear Search & Step Analysis
@@ -55,12 +55,12 @@ An algorithm is a finite, step-by-step procedure designed to solve a specific pr
 ### Objective
 To implement linear search and analyze its time and space complexity.
 
----
+
 
 ### Algorithm
 Check each element of the array from start to end to find the target.
 
----
+
 
 ### Theoretical Solution
 
@@ -69,7 +69,7 @@ Check each element of the array from start to end to find the target.
 - **Average Case:** O(n)  
 - **Space Complexity:** O(1)
 
----
+
 
 ### Practical Work
 
@@ -77,7 +77,7 @@ Check each element of the array from start to end to find the target.
 
 # Linear Search
 
----
+
 
 ## a. Pseudocode
 
@@ -87,8 +87,8 @@ LinearSearch(array, key)
     if array[i] == key
       return i
   return -1
-
 ```
+
 
 ## b. Source Code (C++)
 
@@ -123,12 +123,12 @@ int main() {
 ## Objective
 To implement binary search and understand its logarithmic time complexity.
 
----
+
 
 ## Algorithm
 Use the divide and conquer approach to repeatedly halve the array until the key is found or the search space is exhausted.
 
----
+
 
 ## Theoretical Solution
 
@@ -137,7 +137,7 @@ Use the divide and conquer approach to repeatedly halve the array until the key 
 - **Average Case:** O(log n)
 - **Space Complexity:** O(1)
 
----
+
 
 ## Practical Work
 
@@ -194,12 +194,12 @@ int main() {
 ## Objective
 To implement bubble sort and understand quadratic time complexity.
 
----
+
 
 ## Algorithm
 Repeatedly swap adjacent elements if they are in the wrong order until the array is sorted.
 
----
+
 
 ## Theoretical Solution
 
@@ -208,7 +208,7 @@ Repeatedly swap adjacent elements if they are in the wrong order until the array
 - **Average Case:** O(n²)
 - **Space Complexity:** O(1)
 
----
+
 
 ## Practical Work
 
@@ -278,12 +278,12 @@ int main() {
 
 ## Observations
 
-- **Binary Search** is much faster than **Linear Search** for large datasets but requires a **sorted array**.
+- **Binary Search** is much faster than **Linear Search** for large datasets but requires a sorted array.
 - **Linear Search** is more flexible (works on unsorted arrays), but inefficient for large `n`.
 - **Bubble Sort** is simple and easy to implement but highly inefficient for large inputs.
-- Step count observations align with theoretical **Big-O** analysis.
+- Step count observations align with theoretical Big-O analysis.
 
----
+
 
 ## Conclusion
 
@@ -295,7 +295,7 @@ This lab provided a practical understanding of **basic algorithm complexities** 
 - Theoretical understanding of **asymptotic notations** is reflected in actual step behavior.
 - Improved confidence in analyzing and comparing algorithm performance.
 
----
+
 
 ## Lab Overview: Lab 02
 
@@ -309,7 +309,7 @@ By the end of this lab session, students will be able to:
 - Apply **recursive thinking** to problem-solving.
 - Relate **theoretical complexity** with **practical execution**.
 
----
+
 
 ## Lesson Fit
 
@@ -318,7 +318,7 @@ By the end of this lab session, students will be able to:
 - Programming in **C/C++**
 - Understanding of **data structures** (arrays, recursion)
 
----
+
 
 ## Theory Recap: What is Divide and Conquer?
 
@@ -337,7 +337,7 @@ By the end of this lab session, students will be able to:
 - Encourages **recursive problem-solving**
 - Enables **parallelism** for performance optimization
 
----
+
 
 ## Classic Examples of Divide and Conquer
 
@@ -350,7 +350,7 @@ By the end of this lab session, students will be able to:
 | Strassen's Multiplication | Matrix Multiplication   | ~O(n^2.81)               |
 | Karatsuba’s Algorithm   | Integer Multiplication    | O(n^1.58)                |
 
----
+
 
 # Experiment 04: Merge Sort – Recursive and Iterative
 
@@ -360,7 +360,7 @@ By the end of this lab session, students will be able to:
 - To understand and compare their **time and space complexities**.
 - To observe **step behavior** on various input sizes.
 
----
+
 
 ## Algorithm
 
@@ -370,7 +370,7 @@ By the end of this lab session, students will be able to:
 - **Conquer**: Recursively or iteratively sort both halves.
 - **Combine**: Merge the two sorted halves into a single sorted array.
 
----
+
 
 ## Theoretical Solution
 
@@ -389,7 +389,7 @@ By the end of this lab session, students will be able to:
 - **Iterative Merge Sort**: O(n)  
   _(Avoids recursion but still uses temp arrays)_
 
----
+
 
 ## Practical Work
 
@@ -468,7 +468,7 @@ void mergeSort(int arr[], int l, int r) {
 | Recursive Merge Sort | O(n log n)  | O(n log n)  | O(n log n)  | O(n)   |
 | Iterative Merge Sort | O(n log n)  | O(n log n)  | O(n log n)  | O(n)   |
 
----
+
 
 ## Empirical Comparison Table
 
@@ -480,9 +480,7 @@ void mergeSort(int arr[], int l, int r) {
 | 50,000         | ~13                 | ~13.5               |
 | 100,000        | ~28                 | ~29                 |
 
-*Note: Times may vary slightly depending on system and compiler.*
 
----
 
 ## Observations
 
@@ -491,7 +489,7 @@ void mergeSort(int arr[], int l, int r) {
 - Memory usage remains **O(n)** due to temporary arrays during merging.
 - Iterative merge sort is more **stack-safe** for large datasets.
 
----
+
 
 ## Challenges
 
@@ -500,7 +498,7 @@ void mergeSort(int arr[], int l, int r) {
 - Measuring precise execution time for empirical comparison.
 - Handling array boundaries to avoid index out-of-bounds errors.
 
----
+
 
 ## Conclusion
 
@@ -637,7 +635,7 @@ void printArray(int arr[], int size) {
 - For large arrays, both versions are significantly faster than Bubble or Insertion Sort.
 - Recursive version may hit stack overflow for very large datasets without tail call optimization.
 
----
+
 
 ## Challenges
 
@@ -645,13 +643,13 @@ void printArray(int arr[], int size) {
 - Ensuring correct pivot and partition logic during both versions.
 - Measuring and comparing execution times manually required precision.
 
----
+
 
 ## Conclusion
 
 Quick Sort is an efficient sorting algorithm that benefits from the divide and conquer technique. While both recursive and iterative implementations perform similarly in time complexity, the recursive version is more readable. However, for applications where stack depth is a concern, the iterative version offers better control over memory usage.
 
----
+
 
 # Lab 04  
 ## Greedy Algorithms – Coin Change Problem
@@ -677,7 +675,7 @@ At each step, select the largest coin denomination that is less than or equal to
 - For denominations like `[1, 5, 10, 25]`, greedy **always gives the optimal solution**.  
 - For denominations like `[1, 3, 4]`, greedy **may fail** to give the optimal solution.
 
----
+
 
 ## Practical Work
 ### b. Source Code (C++)
