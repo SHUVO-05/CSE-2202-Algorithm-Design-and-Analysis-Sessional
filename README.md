@@ -391,4 +391,27 @@ By the end of this lab session, students will be able to:
 
 ---
 
-Let me know if you’d like to include the **C++ implementations** for recursive and iterative Merge Sort in the next section!
+## Practical Work
+
+### a. Pseudocode
+
+#### Recursive Merge Sort
+
+```plaintext
+MergeSort(array, left, right)
+  if left < right
+    mid = (left + right) / 2
+    MergeSort(array, left, mid)
+    MergeSort(array, mid + 1, right)
+    Merge(array, left, mid, right)
+```
+### Iterative Merge Sort Pseudocode
+
+```plaintext
+IterativeMergeSort(array, n)
+  for size = 1 to n, doubling each time
+    for left = 0 to n - 1 in steps of 2 * size
+      mid = left + size - 1
+      right = min(left + 2 * size - 1, n - 1)
+      Merge(array, left, mid, right)
+```
