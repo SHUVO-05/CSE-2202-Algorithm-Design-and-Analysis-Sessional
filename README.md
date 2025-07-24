@@ -893,14 +893,124 @@ int main() {
 ## Algorithm
 
 ### Fibonacci Recursive Algorithm
+##Recursive Fibonacci:
+```plaintext
+Function fib(n):
+
+ If n == 0:
+
+ return 0
+
+ If n == 1:
+
+ return 1
+
+ return fib(n-1) + fib(n-2)
+```
+## Memoization (Top-Down DP):
 ```plaintext
 
+Initialize dp array of size n+1 with -1
 
-F(n) = F(n-1) + F(n-2)
+Function fib(n):
 
-Base cases:
+ If dp[n] ≠ -1:
 
-F(0) = 0
+ return dp[n]
 
-F(1) = 1
+ If n == 0:
+
+ dp[n] = 0
+ Else If n == 1:
+
+ dp[n] = 1
+
+ Else:
+
+ dp[n] = fib(n-1) + fib(n-2)
+
+ return dp[n]
 ```
+
+### Tabulation (Bottom-Up DP):
+
+```plaintext
+Function fib(n):
+
+ Initialize dp[0] = 0, dp[1] = 1
+
+ For i from 2 to n:
+
+ dp[i] = dp[i-1] + dp[i-2]
+
+ return dp[n]
+```
+## b. Source Code in C++
+```cpp
+
+#include <iostream>
+
+#include <vector>
+
+using namespace std;
+
+// Recursive Approach
+
+int fibRecursive(int n) {
+
+ if (n <= 1) return n;
+
+ return fibRecursive(n - 1) + fibRecursive(n - 2);
+
+}
+
+// Memoization (Top-Down)
+
+int fibMemo(int n, vector<int>& dp) {
+
+ if (dp[n] != -1) return dp[n];
+
+ if (n <= 1) return dp[n] = n;
+
+ return dp[n] = fibMemo(n - 1, dp) + fibMemo(n - 2, dp);
+
+}
+
+// Tabulation (Bottom-Up)
+
+int fibTab(int n) {
+
+ vector<int> dp(n + 1);
+
+ dp[0] = 0;
+
+ if (n > 0) dp[1] = 1;
+
+ for (int i = 2; i <= n; ++i)
+
+ dp[i] = dp[i - 1] + dp[i - 2];
+
+ return dp[n];
+
+}
+
+int main() {
+
+ int n;
+ cout << "Enter n: ";
+
+ cin >> n;
+
+ cout << "Recursive: " << fibRecursive(n) << endl;
+
+ vector<int> dp(n + 1, -1);
+
+ cout << "Memoization: " << fibMemo(n, dp) << endl;
+
+ cout << "Tabulation: " << fibTab(n) << endl;
+
+ return 0;
+
+}
+```
+
