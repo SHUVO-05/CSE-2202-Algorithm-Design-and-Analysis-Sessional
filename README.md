@@ -510,6 +510,8 @@ In this lab, we explored **Divide and Conquer** algorithms, particularly **Merge
 - Both versions are efficient for large data.
 - Recursive approach is more intuitive but limited by recursion depth.
 - Iterative merge sort is better suited for **memory-critical** or **real-time** systems.
+- 
+
 # Lab 03
 
 ## Experiment 05: Implementation and Complexity Comparison of Recursive and Iterative Quick Sort Algorithms
@@ -678,4 +680,103 @@ At each step, select the largest coin denomination that is less than or equal to
 ---
 
 ## Practical Work
+### b. Source Code (C++)
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int greedyCoinChange(int coins[], int n, int amount) {
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        while (amount >= coins[i]) {
+            amount -= coins[i];
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int coins[] = {25, 10, 5, 1};  // descending order
+    int n = sizeof(coins) / sizeof(coins[0]);
+    int amount;
+
+    cout << "Enter amount: ";
+    cin >> amount;
+
+    int result = greedyCoinChange(coins, n, amount);
+    cout << "Minimum coins required (Greedy): " << result << endl;
+
+    return 0;
+}
+```
+## Analysis Table
+
+| Amount | Coins Used (Greedy)           | Minimum Coins (Optimal) | Greedy Correct? |
+|--------|------------------------------|------------------------|-----------------|
+| 30     | 2 (25 + 5)                   | 2                      | Yes             |
+| 6      | 3 (4 + 1 + 1)                | 2 (3 + 3)              | No              |
+| 49     | 7 (25 + 10 + 10 + 1 + 1 + 1 + 1) | 7                      | Yes             |
+
+---
+
+| Algorithm           | Best Case | Worst Case | Average Case | Space Complexity |
+|---------------------|-----------|------------|--------------|------------------|
+| Greedy Coin Change   | O(n)      | O(n)       | O(n)         | O(1)             |
+
+---
+
+### Observations
+- Greedy algorithm is simple and fast.
+- Greedy does not always provide the optimal solution for all coin sets.
+- It works optimally with classic coin denominations like US coins.
+- For some unusual coin sets, greedy fails and other algorithms (like dynamic programming) are needed.
+
+### Challenges
+- If the coin denominations are unordered, sorting is required first.
+- Some coin sets cannot be solved optimally with greedy; other methods are necessary.
+
+### Conclusion
+This lab helped understand the Greedy Algorithm paradigm and its application to the Coin Change problem. Greedy uses less time and memory but does not always guarantee optimality. Therefore, the choice of algorithm depends on the problem type.
+
+---
+
+# Lab 05  
+## Greedy Algorithm – Fractional Knapsack Problem
+
+### Experiment 07: Greedy Algorithm – Fractional Knapsack Problem
+
+### Objective
+- To understand and apply the greedy strategy to the Knapsack Problem.
+- To implement the Fractional Knapsack algorithm.
+- To compare Greedy (Fractional) Knapsack with the optimal 0/1 Knapsack.
+- To analyze the time and space complexity.
+
+### Algorithm
+Greedy Strategy:
+- Compute value per unit weight for each item.
+- Sort all items in decreasing order of value/weight.
+- Traverse sorted items:
+  - Take the full item if it fits.
+  - Take the possible fraction if the full item doesn't fit.
+
+### Theoretical Solution
+- Given:
+  - n items with weights `w[i]` and values `v[i]`
+  - Knapsack capacity `W`
+- Goal:
+  - Maximize total value in knapsack allowing fraction of items.
+- Approach:
+  - Greedy selection based on value/weight ratio.
+- Time Complexity:
+  - Sorting: O(n log n)
+  - Selection: O(n)
+  - → Total: O(n log n)
+- Space Complexity:
+  - Storing items and ratios → O(n)
+
+---
+
+### Practical Work
 
