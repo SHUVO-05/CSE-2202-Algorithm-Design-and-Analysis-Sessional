@@ -893,8 +893,9 @@ int main() {
 ## Algorithm
 
 ### Fibonacci Recursive Algorithm
-##Recursive Fibonacci:
 ```plaintext
+Recursive Fibonacci:
+
 Function fib(n):
 
  If n == 0:
