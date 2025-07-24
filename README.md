@@ -510,3 +510,61 @@ In this lab, we explored **Divide and Conquer** algorithms, particularly **Merge
 - Both versions are efficient for large data.
 - Recursive approach is more intuitive but limited by recursion depth.
 - Iterative merge sort is better suited for **memory-critical** or **real-time** systems.
+# Lab 03
+
+## Experiment 05: Implementation and Complexity Comparison of Recursive and Iterative Quick Sort Algorithms
+
+### Objective
+- To understand the Divide and Conquer paradigm.
+- To implement Quick Sort using both recursive and iterative approaches.
+- To compare the performance and complexity of both implementations on different input sizes.
+- To analyze the space and time efficiency for real-world large data inputs.
+
+### Algorithm
+Quick Sort Algorithm uses the Divide and Conquer strategy:
+
+- **Divide:** Choose a pivot and partition the array into two subarrays such that elements less than pivot go to the left, and greater than pivot go to the right.
+- **Conquer:** Recursively or iteratively apply the same strategy to left and right subarrays.
+- **Combine:** No combining is needed, as sorting happens during the recursive return.
+
+### Theoretical Solution of the Problem
+
+| Case          | Time Complexity          |
+|---------------|--------------------------|
+| Best Case     | O(n log n)               |
+| Average Case  | O(n log n)               |
+| Worst Case   | O(n²) (when pivot is worst) |
+
+- **Space Complexity (Recursive):** O(log n) auxiliary space due to recursion stack.
+- **Space Complexity (Iterative):** O(n) auxiliary stack (manually implemented).
+## Practical Work
+
+### a. Pseudocode
+
+#### Recursive Quick Sort
+
+```plaintext
+QUICKSORT(arr, low, high)
+  if low < high
+    pivotIndex ← PARTITION(arr, low, high)
+    QUICKSORT(arr, low, pivotIndex - 1)
+    QUICKSORT(arr, pivotIndex + 1, high)
+```
+
+### Iterative Quick Sort Pseudocode
+
+```plaintext
+ITERATIVE_QUICKSORT(arr, low, high)
+  Create stack
+  push(low, high) to stack
+
+  while stack is not empty
+    (low, high) ← pop()
+    pivotIndex ← PARTITION(arr, low, high)
+    
+    if pivotIndex - 1 > low
+      push(low, pivotIndex - 1)
+    if pivotIndex + 1 < high
+      push(pivotIndex + 1, high)
+```
+
